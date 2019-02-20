@@ -1,0 +1,41 @@
+body{
+	font-family: 'Roboto';
+	background: whitesmoke;
+}
+h1{
+	font-weight: 300;
+	font-size: 36px;
+	letter-spacing: 2px;
+	text-align: center;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #eee;
+	color: #292929;
+}
+.container{
+	width: 400px;
+	margin: 0 auto;
+	/* position: relative; */
+}
+
+.spinner::before {
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	background-size: contain;
+	content: "";
+	height: 80px;
+	width: 80px;
+	transform: translate3d(-50%, -50%, 0);
+	transform-origin: center;
+	will-change: transform;
+	animation: 1.2s linear infinite spinner;
+}
+
+.rocket::before{
+	background-image: url('../images/rocket.svg');
+}
+
+@keyframes spinner {
+	from {transform: translate3d(-50%, -50%, 0) rotate(0deg)}
+	to {transform: translate3d(-50%, -50%, 0) rotate(360deg)}
+}
